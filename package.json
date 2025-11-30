@@ -1,0 +1,33 @@
+{
+  "name": "hushh-prototype",
+  "version": "1.0.0",
+  "description": "HUSHHcoin - Privacy-focused stablecoin MVP",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js"
+  },
+  "keywords": [
+    "blockchain",
+    "stablecoin",
+    "privacy",
+    "soulbound"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-ethers": "^4.0.3",
+    "@nomicfoundation/hardhat-network-helpers": "^3.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^3.0.7",
+    "@openzeppelin/contracts": "^5.0.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "chai": "^6.2.1",
+    "ethers": "^6.15.0",
+    "hardhat": "^2.22.0",
+    "typechain": "^8.3.2"
+  }
+}
