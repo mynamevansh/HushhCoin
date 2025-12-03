@@ -12,10 +12,8 @@ contract HushhIdentity is ERC721, Ownable {
     mapping(address => bool) public hasIdentity;
     mapping(address => uint256) public brandValueScore;
 
-    // 🔥 NEW — Brand Access Roles
     mapping(address => bool) public isBrand;
 
-    // 🔥 NEW — Public scoring mode toggle
     bool public publicScoringEnabled = false;
 
     event IdentityCreated(address wallet,uint256 tokenId,uint256 time);
@@ -38,7 +36,6 @@ contract HushhIdentity is ERC721, Ownable {
         emit IdentityCreated(msg.sender,id,block.timestamp);
     }
 
-    // 🔥 Score rules: Owner OR approved brand OR public-if-enabled
     modifier canScore(address wallet) {
         require(hasIdentity[wallet],"No identity");
         require(
@@ -55,7 +52,6 @@ contract HushhIdentity is ERC721, Ownable {
         emit ScoreUpdated(wallet,old,score,block.timestamp);
     }
 
-    // 🔥 ADMIN PANEL
     function addBrand(address brand) external onlyOwner {
         isBrand[brand]=true;
         emit BrandAdded(brand);
